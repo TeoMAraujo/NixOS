@@ -91,6 +91,7 @@ home-manager = {
     peazip #archive manager
 
   #tools
+    kdePackages.kwallet
     gparted #disk manager
     ventoy-full #bootable iso's
 
