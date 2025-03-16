@@ -105,7 +105,10 @@ home-manager = {
     starship #prompt for shell
     neofetch
     spicetify-cli #spotify cli
+    pkgs.home-manager
   ];
+
+  programs.firefox.enable = true;
 
   system.stateVersion = "24.11";
 }
