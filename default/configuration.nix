@@ -105,7 +105,9 @@ home-manager = {
     starship #prompt for shell
     neofetch
     spicetify-cli #spotify cli
-    pkgs.home-manager
+    home-manager
+    catppuccin-whiskers
+    justbuild
   ];
 
   programs.firefox.enable = true;
