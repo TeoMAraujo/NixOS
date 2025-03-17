@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };# If using a stable channel you can use `url = "github:nix-community/nixvim/nixos<version>"`
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -17,6 +21,7 @@
       modules = [
         ./default/configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.nixvim.nixosModules.default
       ];
     };
   };

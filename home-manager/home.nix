@@ -1,0 +1,45 @@
+{ config, pkgs, ... }:
+
+{
+  home.username = "paula";
+  home.homeDirectory = "/home/paula";
+
+  home.stateVersion = "24.11"; # Please read the comment before changing.
+
+  home.packages = [
+  ];
+
+  programs = {
+      ghostty = {
+      enable = true;
+        settings = {
+          theme = "catppuccin-mocha";
+          font-size = 10;
+          background-opacity = 0.8;
+          keybind = [
+              "ctrl+h=goto_split:left"
+              "ctrl+l=goto_split:right"
+          ];
+        };
+      };
+
+      git = {
+        enable = true;
+        userName = "TeoMAraujo";
+        userEmail = "teoaraujoufmg@gmail.com"
+        aliases = {
+        rSwtich = "sudo nixos-rebuild switch --flake ~/NixOS/";
+        };
+      };
+  };
+
+  home.file = {
+  };
+
+  home.sessionVariables = {
+    # EDITOR = "emacs";
+  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}

@@ -8,7 +8,6 @@
       ./regionalization.nix
       inputs.home-manager.nixosModules.default
     ];
-
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -89,13 +88,12 @@ home-manager = {
     kdePackages.dolphin #file manager
     ghostty #terminal emulator
     peazip #archive manager
-
+    inputs.nixvim.nixosModules.${pkgs.system}.default #= NixVim
   #tools
     kdePackages.kwallet
     gparted #disk manager
     ventoy-full #bootable iso's
-
-  #simulators
+    #simulators
     logisim #logic gate sim
 
   #serviceslogisim
@@ -109,8 +107,8 @@ home-manager = {
     catppuccin-whiskers
     justbuild
   ];
-
   programs.firefox.enable = true;
+  programs.nixvim.enable = true;
 
   system.stateVersion = "24.11";
 }
