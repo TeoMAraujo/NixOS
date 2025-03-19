@@ -1,0 +1,7 @@
+git remote set-url origin https://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@github.com/TeoMAraujo/NixOS
+cd ~/NixOS/
+git add .
+git commit -m "xd"
+git push
+
+

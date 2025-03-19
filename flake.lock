@@ -2,7 +2,26 @@
   "nodes": {
     "flake-parts": {
       "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1738453229,
+        "narHash": "sha256-7H9XgNiGLKN1G1CgRh0vUL4AheZSYzPm+zmZ7vxbJdo=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "32ea77a06711b758da0ad9bd6a844c5740a87abd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
         "nixpkgs-lib": [
+          "nixvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -63,10 +82,12 @@
       "inputs": {
         "flake-utils": [
           "nixvim",
+          "nixvim",
           "nuschtosSearch",
           "flake-utils"
         ],
         "nixpkgs": [
+          "nixvim",
           "nixvim",
           "nuschtosSearch",
           "nixpkgs"
@@ -103,12 +124,60 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1742176196,
+        "narHash": "sha256-vJzFZGaCpnmo7I6i416HaBLpC+hvcURh/BQwROcGIp8=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1738797219,
+        "narHash": "sha256-KRwX9Z1XavpgeSDVM/THdFd6uH8rNm/6R+7kIbGa+2s=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1da52dd49a127ad74486b135898da2cef8c62665",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
           "nixpkgs"
         ],
+        "nixvim": "nixvim_2"
+      },
+      "locked": {
+        "lastModified": 1742176008,
+        "narHash": "sha256-0KW91qNhkixI1tREpkoV7gUrxyjpQy42pWTqy18qcTg=",
+        "owner": "TeoMAraujo",
+        "repo": "NixVim",
+        "rev": "f916b210f838bb05b03d13e02ac432eef91cd713",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TeoMAraujo",
+        "repo": "NixVim",
+        "type": "github"
+      }
+    },
+    "nixvim_2": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": "nixpkgs_2",
         "nuschtosSearch": "nuschtosSearch"
       },
       "locked": {
@@ -130,6 +199,7 @@
         "flake-utils": "flake-utils",
         "ixx": "ixx",
         "nixpkgs": [
+          "nixvim",
           "nixvim",
           "nixpkgs"
         ]

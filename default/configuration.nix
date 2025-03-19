@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixvim, ... }:
 
 {
   imports =
@@ -76,6 +76,7 @@ home-manager = {
     krita #image editor
     davinci-resolve #video editor
     whatsapp-for-linux #zap kk
+    discord
 
   #Default Aplications
     librewolf #browser
@@ -88,7 +89,6 @@ home-manager = {
     kdePackages.dolphin #file manager
     ghostty #terminal emulator
     peazip #archive manager
-    inputs.nixvim.nixosModules.${pkgs.system}.default #= NixVim
   #tools
     kdePackages.kwallet
     gparted #disk manager
@@ -106,9 +106,17 @@ home-manager = {
     home-manager
     catppuccin-whiskers
     justbuild
+
+#    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
+ #     colorschemes.gruvbox.enable = true;
+  #  })
+
   ];
   programs.firefox.enable = true;
-  programs.nixvim.enable = true;
+  programs.bash.shellAliases = {
+    rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
+    rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
+  };
 
   system.stateVersion = "24.11";
 }

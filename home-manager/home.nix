@@ -16,6 +16,9 @@
           theme = "catppuccin-mocha";
           font-size = 10;
           background-opacity = 0.8;
+	  cursor-style = "bar";
+	  cursor-style-blink = true;
+          adjust-cursor-thickness = 2;
           keybind = [
               "ctrl+h=goto_split:left"
               "ctrl+l=goto_split:right"
@@ -26,10 +29,7 @@
       git = {
         enable = true;
         userName = "TeoMAraujo";
-        userEmail = "teoaraujoufmg@gmail.com"
-        aliases = {
-        rSwtich = "sudo nixos-rebuild switch --flake ~/NixOS/";
-        };
+        userEmail = "teoaraujoufmg@gmail.com";
       };
   };
 

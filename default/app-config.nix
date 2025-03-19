@@ -42,6 +42,10 @@
     programs.starship = {
         enable = true;
         settings = {
+            nix_shell = {
+            symbol = " ";
+            heuristic = false;
+            };
             add_newline = true;
             "$schema" = "https://starship.rs/config-schema.json";
            character = {
@@ -56,7 +60,7 @@
                 truncation_length = 4;
                 style = "bold lavender";
             };
-            os.disabled = false;
+            os.disabled = true;
             palette = "catppuccin_mocha";
             palettes.catppuccin_mocha = {
                 rosewater = "#f5e0dc";
