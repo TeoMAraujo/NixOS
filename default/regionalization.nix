@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+    #networking.timeServers = options.networking.timeServers.default +
+    services.chrony.enable = true;
     time.timeZone = "America/Sao_Paulo";
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
