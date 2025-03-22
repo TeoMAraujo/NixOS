@@ -55,6 +55,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       vim
+      neovim
     ];
   };
 

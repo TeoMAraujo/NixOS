@@ -30,6 +30,11 @@
 		pkgs = nixpkgs.legacyPackages.${system};
 	in
     {
+      homeConfigurations."paula" =
+        inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./default/home.nix ];
+	};
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
