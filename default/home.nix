@@ -30,7 +30,7 @@
           userName = "TeoMAraujo";
           userEmail = "teoaraujoufmg@gmail.com";
         };
-programs.neovim = 
+neovim = 
   let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
@@ -44,8 +44,6 @@ programs.neovim =
 
     extraPackages = with pkgs; [
       lua-language-server
-      rnix-lsp
-
       xclip
       wl-clipboard
     ];
