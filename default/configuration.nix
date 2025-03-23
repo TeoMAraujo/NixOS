@@ -110,7 +110,7 @@ home-manager = {
     vscode
     tmux
     libgccjit
-    binutils
+#    binutils
     libgcc
 #    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
  #     colorschemes.gruvbox.enable = true;
