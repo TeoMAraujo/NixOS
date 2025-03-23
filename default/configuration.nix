@@ -97,7 +97,7 @@ home-manager = {
     #simulators
     logisim #logic gate sim
     valgrind #memory leaks app
-  #serviceslogisim
+    # services
     git
     zip
     unzip
@@ -109,11 +109,12 @@ home-manager = {
     justbuild
     vscode
     tmux
-
+    libgccjit
+    binutils
+    libgcc
 #    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
  #     colorschemes.gruvbox.enable = true;
   #  })
-
   ];
   programs.firefox.enable = true;
   programs.neovim.enable = true;
