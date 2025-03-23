@@ -96,7 +96,7 @@ home-manager = {
     ventoy-full #bootable iso's
     #simulators
     logisim #logic gate sim
-
+    valgrind #memory leaks app
   #serviceslogisim
     git
     zip
@@ -107,6 +107,8 @@ home-manager = {
     home-manager
     catppuccin-whiskers
     justbuild
+    vscode
+    tmux
 
 #    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
  #     colorschemes.gruvbox.enable = true;
@@ -114,6 +116,7 @@ home-manager = {
 
   ];
   programs.firefox.enable = true;
+  programs.neovim.enable = true;
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
