@@ -110,6 +110,7 @@ home-manager = {
     vscode
     tmux
     libgccjit
+    inputs.nixvim.packages.${pkgs.system}.default 
 #    binutils
     libgcc
 #    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
