@@ -1,12 +1,10 @@
 {
   description = "Nixos config flake";
-
-
-
-
-
-    inputs = {
+   
+   
+   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    catppuccin.nixosModules.catppuccin 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,11 +13,7 @@
       url = "github:TeoMAraujo/NixVim";
       inputs.nixpkgs.follows = "nixpkgs";
     };# If using a stable channel you can use `url = "github:nix-community/nixvim/nixos<version>"`
-    catppuccin.url = "github:catppuccin/nix";
     };
-  };
-  };
-
   outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
