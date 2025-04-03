@@ -124,5 +124,10 @@ home-manager = {
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
   };
 
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
+
+
+
   system.stateVersion = "24.11";
 }
