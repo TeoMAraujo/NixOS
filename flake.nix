@@ -2,15 +2,10 @@
   description = "Nixos config flake";
 
 
-   # home-manager.nixosModules.home-manager {
-             # home-manager.useGlobalPkgs = true;
-             # home-manager.useUserPackages = true;
-             # home-manager.users.mike = {
-             #   imports = [ ./hosts/MAIN/home.nix ];
 
-            #  };
-           # }
-  inputs = {
+
+
+    inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,9 +15,12 @@
       url = "github:TeoMAraujo/NixVim";
       inputs.nixpkgs.follows = "nixpkgs";
     };# If using a stable channel you can use `url = "github:nix-community/nixvim/nixos<version>"`
+    catppuccin.url = "github:catppuccin/nix";
+    };
+  };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
     let
@@ -39,6 +37,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./default/configuration.nix
+          catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.default
         ];
       };
