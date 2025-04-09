@@ -55,7 +55,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       vim
-      neovim
     ];
   };
 
@@ -118,7 +117,6 @@ home-manager = {
   #  })
   ];
   programs.firefox.enable = true;
-  programs.neovim.enable = true;
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";

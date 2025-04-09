@@ -13,7 +13,7 @@
       url = "github:TeoMAraujo/NixVim";
       inputs.nixpkgs.follows = "nixpkgs";
     };# If using a stable channel you can use `url = "github:nix-community/nixvim/nixos<version>"`
-    };
+  };
   outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
