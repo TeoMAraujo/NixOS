@@ -84,7 +84,6 @@ home-manager = {
     nomacs #image viewer
     amarok #music player
     vlc #video player
-    neovim  #text editor
     kdePackages.okular #PDF viewer
     kdePackages.dolphin #file manager
     ghostty #terminal emulator
