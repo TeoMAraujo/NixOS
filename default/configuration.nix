@@ -111,8 +111,8 @@ home-manager = {
 #    binutils
     libgcc
     (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
- #     colorschemes.gruvbox.enable = true;
-  #  })
+      colorschemes.gruvbox.enable = true;
+  })
   ];
   programs.firefox.enable = true;
   programs.bash.shellAliases = {
