@@ -107,12 +107,14 @@ home-manager = {
     vscode
     tmux
     libgccjit
-    # inputs.nixvim.packages.${pkgs.system}.default
+
 #    binutils
     libgcc
-    (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
-      colorschemes.gruvbox.enable = true;
-  })
+ #   (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
+  #    colorschemes.gruvbox.enable = true;
+  #})
+   # inputs.nixvim.packages.${pkgs.system}.default
+
   ];
   programs.firefox.enable = true;
   programs.bash.shellAliases = {
