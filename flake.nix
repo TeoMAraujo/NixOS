@@ -5,6 +5,7 @@
    inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix"; 
+    nvf.url = "github:notashelf/nvf";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,9 +15,7 @@
   #    inputs.nixpkgs.follows = "nixpkgs";
 #    };# If using a stable channel you can use `url = "github:nix-community/nixvim/nixos<version>"`
   };
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
+  outputs = { self, nixpkgs, home-manager, catppuccin, nvf, ... }@inputs:
     let
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
@@ -27,12 +26,21 @@
           inherit pkgs;
           modules = [ ./default/home.nix ];
 	};
+	packages.x86_64-linux. default =
+        (inputs.nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [./nvf-configuration.nix];
+        }).neovim;
+
+	legacyPackages
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./default/configuration.nix
           catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
+
         ];
       };
     };

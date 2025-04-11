@@ -120,6 +120,7 @@ home-manager = {
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
+
   };
 
   catppuccin.flavor = "mocha";
