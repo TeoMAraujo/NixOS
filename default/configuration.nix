@@ -7,6 +7,7 @@
       ./app-config.nix
       ./regionalization.nix
       inputs.home-manager.nixosModules.default
+      inputs.nixvim.nixosModules.nixvim
     ];
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -66,6 +67,8 @@ home-manager = {
   };
 };
 
+
+
 # Programs
   environment.systemPackages = with pkgs; [
   #apps
@@ -107,14 +110,14 @@ home-manager = {
     vscode
     tmux
     libgccjit
-
+    
 #    binutils
     libgcc
  #   (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
   #    colorschemes.gruvbox.enable = true;
   #})
-   inputs.nixvim.packages.${pkgs.system}.default
-
+        #   inputs.nixvim.packages.${pkgs.system}.default
+        #    (nixvim.legacyPackages."${pkgs.stdenv
   ];
   programs.firefox.enable = true;
   programs.bash.shellAliases = {

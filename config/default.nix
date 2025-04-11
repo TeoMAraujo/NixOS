@@ -1,0 +1,7 @@
+{ ... }:
+{
+  imports = [
+    ./plugins
+    ./options.nix
+  ];
+}
