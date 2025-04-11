@@ -113,7 +113,7 @@ home-manager = {
  #   (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
   #    colorschemes.gruvbox.enable = true;
   #})
-   # inputs.nixvim.packages.${pkgs.system}.default
+   inputs.nixvim.packages.${pkgs.system}.default
 
   ];
   programs.firefox.enable = true;
