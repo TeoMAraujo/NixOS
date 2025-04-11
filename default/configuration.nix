@@ -7,7 +7,7 @@
       ./app-config.nix
       ./regionalization.nix
       inputs.home-manager.nixosModules.default
-      inputs.nixvim.nixosModules.nixvim
+ #     inputs.nixvim.nixosModules.nixvim
     ];
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -110,7 +110,8 @@ home-manager = {
     vscode
     tmux
     libgccjit
-    
+    inputs.nixvim.packages.${pkgs.system}.default # NixVim
+
 #    binutils
     libgcc
  #   (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
