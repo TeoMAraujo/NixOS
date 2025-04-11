@@ -31,7 +31,6 @@
           ./default/configuration.nix
           catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.default
-          inputs.nixvim.nixosModules.nixvim
         ];
       };
     };
