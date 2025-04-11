@@ -6,8 +6,7 @@
       ./hardware-configuration.nix
       ./app-config.nix
       ./regionalization.nix
-      inputs.home-manager.nixosmodules.default
-      inputs.nixvim.nixosmodules.nixvim
+      inputs.home-manager.nixosModules.default
     ];
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -125,7 +124,6 @@ home-manager = {
         #   inputs.nixvim.packages.${pkgs.system}.default
         #    (nixvim.legacyPackages."${pkgs.stdenv
   ];
-  programs.nixvim.enable = true;
   programs.firefox.enable = true;
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
