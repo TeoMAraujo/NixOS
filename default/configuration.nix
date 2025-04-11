@@ -110,7 +110,7 @@ home-manager = {
     tmux
     libgccjit
     
-        # inputs.nixvim.packages.${pkgs.system}.default # NixVim
+    inputs.nixvim.packages.${pkgs.system}.default # NixVim
     #(nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
         # imports = [./nixvim]
         #})    
