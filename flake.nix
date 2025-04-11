@@ -15,7 +15,7 @@
     }; 
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
-  outputs = { self, nixpkgs, home-manager, catppuccin,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs:
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
     let

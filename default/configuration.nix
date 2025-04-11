@@ -2,12 +2,12 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ # include the results of the hardware scan.
       ./hardware-configuration.nix
       ./app-config.nix
       ./regionalization.nix
-      inputs.home-manager.nixosModules.default
- #     inputs.nixvim.nixosModules.nixvim
+      inputs.home-manager.nixosmodules.default
+      inputs.nixvim.nixosmodules.nixvim
     ];
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -110,8 +110,13 @@ home-manager = {
     vscode
     tmux
     libgccjit
-    inputs.nixvim.packages.${pkgs.system}.default # NixVim
+    
+        # inputs.nixvim.packages.${pkgs.system}.default # NixVim
+    #(nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
+        # imports = [./nixvim]
+        #})    
 
+    
 #    binutils
     libgcc
  #   (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
@@ -120,6 +125,7 @@ home-manager = {
         #   inputs.nixvim.packages.${pkgs.system}.default
         #    (nixvim.legacyPackages."${pkgs.stdenv
   ];
+  programs.nixvim.enable = true;
   programs.firefox.enable = true;
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/NixOS/";
