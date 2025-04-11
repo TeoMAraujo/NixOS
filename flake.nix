@@ -7,7 +7,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:TeoMAraujo/NixVim";
+            # url = "github:TeoMAraujo/NixVim";
+      url = "github:AntonioDrumond/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     }; 
     flake-parts.url = "github:hercules-ci/flake-parts";
