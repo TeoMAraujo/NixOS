@@ -250,16 +250,16 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1740838916,
-        "narHash": "sha256-0EEc/bjOu1RKmVqI9091DRvjsOz66ubtlgP2nibziGE=",
-        "owner": "AntonioDrumond",
-        "repo": "nixvim",
-        "rev": "97cf0293b807a774c58d35a991027ab45d2045d7",
+        "lastModified": 1744409602,
+        "narHash": "sha256-ge0qEcRyMYj8+j+leR8t4DkdvokNBp659B08n+x10ps=",
+        "owner": "TeoMAraujo",
+        "repo": "NixVim",
+        "rev": "fffac68f2a1f40ddef678479ad0ba116ad8cbf1d",
         "type": "github"
       },
       "original": {
-        "owner": "AntonioDrumond",
-        "repo": "nixvim",
+        "owner": "TeoMAraujo",
+        "repo": "NixVim",
         "type": "github"
       }
     },
