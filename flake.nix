@@ -2,7 +2,7 @@
     description = "Config do 'Teu Pai'";
     
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
         catppuccin.url = "github:catppuccin/nix"; 
         flake-parts.url = "github:hercules-ci/flake-parts";
         home-manager = {

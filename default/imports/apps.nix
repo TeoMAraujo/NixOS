@@ -10,7 +10,7 @@
     environment.systemPackages = with pkgs; [
     #apps
         obsidian #flexible file and text manager
-        desktop
+        github-desktop
         krita #image editor
         davinci-resolve #video editor
         nomacs #image viewer
@@ -48,7 +48,7 @@
         home-manager
         catppuccin-whiskers
         justbuild   
-        ark #archive manager
+        kdePackages.ark #archive manager
     ];
     
     # Battery optimization
