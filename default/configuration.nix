@@ -9,6 +9,7 @@
         ./imports/system.nix
         ./imports/apps.nix
         inputs.home-manager.nixosModules.default
+        inputs.nixvim.nixosModules.nixvim 
     ];
 
 # Home-Manager
