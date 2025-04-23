@@ -17,7 +17,7 @@
         amarok #music player
         vlc #video player
         kdePackages.dolphin #file manager
-
+        anki
     #social
         whatsapp-for-linux #zap com eletron kk
         discord 
