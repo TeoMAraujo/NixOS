@@ -1,12 +1,13 @@
- { config, pkgs, inputs, ... }:
+ { config, pkgs, inputs, nixvim,... }:
   
    {
      home.username = "paula";
      home.homeDirectory = "/home/paula";
   
      home.stateVersion = "24.11"; # Please read the comment before changing.
-     home.packages = with pkgs; [
-     ];
+        home.packages = with pkgs; [ 
+            inputs.nixvim.packages.${pkgs.system}.default 
+        ];
  
    programs = {
         ghostty = {

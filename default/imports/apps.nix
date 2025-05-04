@@ -27,11 +27,13 @@
         kdePackages.kwallet
         gparted #disk manager
         ventoy-full #bootable iso's
+
     
     # programming tools
+        #kicad-unstable
         logisim #logic gate sim
         valgrind #memory leaks app
-        inputs.nixvim.packages.${pkgs.system}.default # NixVim
+        # inputs.nixvim.packages.${pkgs.system}.default # NixVim
         tmux
         libgccjit 
         libgcc 
