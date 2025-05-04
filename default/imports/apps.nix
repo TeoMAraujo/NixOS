@@ -32,6 +32,8 @@
     # programming tools
         #kicad-unstable
         logisim #logic gate sim
+        #        onshape
+        kicad
         valgrind #memory leaks app
         # inputs.nixvim.packages.${pkgs.system}.default # NixVim
         tmux
