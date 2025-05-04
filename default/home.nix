@@ -6,7 +6,6 @@
   
      home.stateVersion = "24.11"; # Please read the comment before changing.
      home.packages = with pkgs; [
-        inputs.nixvim.packages.${pkgs.system}.default
      ];
  
    programs = {

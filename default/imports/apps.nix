@@ -33,7 +33,7 @@
         #        onshape
         kicad
         valgrind #memory leaks app
-        #        inputs.nixvim.packages.${pkgs.system}.default # NixVim
+        inputs.nixvim.packages.${pkgs.system}.default # NixVim
         tmux
         libgccjit 
         libgcc 
