@@ -30,7 +30,7 @@
     
     # programming tools
         logisim #logic gate sim
-        onshape
+        #        onshape
         kicad
         valgrind #memory leaks app
         #        inputs.nixvim.packages.${pkgs.system}.default # NixVim
