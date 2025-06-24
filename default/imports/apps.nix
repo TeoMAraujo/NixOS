@@ -29,13 +29,13 @@
     whatsapp-for-linux # zap com eletron kk
     discord
     spotify # music
-
     #tools
     kdePackages.kwallet
     gparted # disk manager
     ventoy-full # bootable iso's
 
     # programming tools
+    vscode
     #kicad-unstable
     logisim # logic gate sim
     #        onshape
