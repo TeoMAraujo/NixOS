@@ -17,6 +17,7 @@
     #apps
     jdk
     obsidian # flexible file and text manager
+    notion-app
     github-desktop
     krita # image editor
     davinci-resolve # video editor
@@ -37,6 +38,8 @@
     # programming tools
     vscode
     #kicad-unstable
+    R
+    rstudio
     logisim # logic gate sim
     #        onshape
     valgrind # memory leaks app
@@ -48,7 +51,8 @@
     neofetch
     ghostty # terminal emulator
     bash
-
+    doxygen
+    doxygen_gui
     # services
     git
     zip
