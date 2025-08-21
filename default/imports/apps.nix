@@ -17,7 +17,7 @@
     #apps
     jdk
     obsidian # flexible file and text manager
-    notion-app
+    notion-app-enhanced
     github-desktop
     krita # image editor
     davinci-resolve # video editor
@@ -38,6 +38,7 @@
     # programming tools
     vscode
     #kicad-unstable
+    quartus-prime-lite
     R
     rstudio
     logisim # logic gate sim
