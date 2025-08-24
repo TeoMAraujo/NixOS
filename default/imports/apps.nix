@@ -68,7 +68,7 @@
   # Battery optimization
   powerManagement.powertop.enable = true;
   services.thermald.enable = true;
-  services.tlp.enable = false;
+  services.tlp.enable = true;
 
   programs.firefox.enable = true;
 }
