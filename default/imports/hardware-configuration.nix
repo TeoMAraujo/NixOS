@@ -14,7 +14,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_16;
+
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "thunderbolt"
