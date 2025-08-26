@@ -5,6 +5,8 @@
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/github/NixOS/";
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
+    rSboot = "sudo nixos-rebuild boot --flake ~/github/NixOS/";
+    rflake = "sudo nix flake update --flake ~/github/NixOS/";
     logisim = "cd Downloads/ && java -jar logisim-generic-2.7.1.jar";
   };
   # autocpufreq

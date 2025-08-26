@@ -33,7 +33,7 @@
     #tools
     kdePackages.kwallet
     gparted # disk manager
-    ventoy-full # bootable iso's
+    #ventoy-full # bootable iso's
 
     # programming tools
     vscode
