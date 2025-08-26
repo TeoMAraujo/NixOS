@@ -33,6 +33,7 @@
       efiSupport = true;
       useOSProber = true;
     };
+    efi.efiSysMountPoint = "/boot/efi";
   };
   # Enable CUPS to print documents.
   services.printing.enable = true;
