@@ -8,6 +8,7 @@
         ./imports/regionalization.nix
         ./imports/system.nix
         ./imports/apps.nix
+        ./imports/boot.nix
         inputs.home-manager.nixosModules.default
     ];
 
