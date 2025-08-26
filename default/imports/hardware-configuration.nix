@@ -5,7 +5,6 @@
 
 {
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_16;
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
