@@ -11,7 +11,7 @@
   };
   # autocpufreq
   services.auto-cpufreq = {
-    enable = false;
+    enable = true;
     settings = {
       battery = {
         governor = "powersave";
@@ -26,7 +26,7 @@
   # TLP
   services.power-profiles-daemon.enable = false;
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       # profile
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
