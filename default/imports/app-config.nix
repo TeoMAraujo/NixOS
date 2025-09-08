@@ -20,6 +20,9 @@
       charger = {
         governor = "performance";
         turbo = "auto";
+        #enable_thresholds = true
+        start_threshold = 0;
+        stop_threshold = 85;
       };
     };
   };
