@@ -40,7 +40,7 @@
     #kicad-unstable
     quartus-prime-lite
     R
-    rstudio
+    # rstudio
     logisim # logic gate sim
     #        onshape
     valgrind # memory leaks app
