@@ -63,6 +63,7 @@
     catppuccin-whiskers
     justbuild
     kdePackages.ark # archive manager
+    gnumake
   ];
 
   # Battery optimization
