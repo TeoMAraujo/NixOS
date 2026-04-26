@@ -46,7 +46,7 @@
   hardware.firmware = [ pkgs.sof-firmware ];
 
   # 2. Disable Legacy PulseAudio (CRITICAL: conflicts with Pipewire)
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # 3. Enable PipeWire
   security.rtkit.enable = true;
@@ -64,7 +64,7 @@
   networking.networkmanager.enable = true;
 
   # Input
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Theme
   catppuccin.flavor = "mocha";

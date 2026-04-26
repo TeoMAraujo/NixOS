@@ -39,7 +39,6 @@ in
     ./imports/system.nix
     ./imports/apps.nix
     ./imports/boot.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   # --- AUDIO FIX START ---
@@ -69,14 +68,6 @@ in
   };
 
   # --- AUDIO FIX END ---
-
-  # Home-Manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "paula" = import ./home.nix;
-    };
-  };
 
   # Features
   nix.settings.experimental-features = [

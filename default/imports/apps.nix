@@ -53,7 +53,7 @@
     libgcc
     starship # prompt for shell
     neofetch
-    ghostty # terminal emulator
+    kitty # terminal emulator
     bash
     doxygen
     doxygen_gui
