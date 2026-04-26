@@ -7,7 +7,6 @@
 
 {
   # User config
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.paula = {
     isNormalUser = true;
     description = "paula";
@@ -15,16 +14,16 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [ ];
   };
-  networking.hostName = "nixos"; # Define your hostname.
 
-  # Enable the KDE Plasma Desktop Environment.
+  networking.hostName = "nixos";
+
+  # Desktop Environment
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # Bootloader.
+  # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -32,27 +31,39 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true;
+      # REMOVED: extraConfig = "acpi /ssdt-csc3551.aml";
+      # REASON: That file is for older Zenbooks. It breaks Lunar Lake audio.
     };
-    #efi.efiSysMountPoint = "/boot";
   };
-  # Enable CUPS to print documents.
+
+  # Printing
   services.printing.enable = true;
 
-  # Hardware
-  # Enable sound with pipewire.
+  # --- AUDIO CONFIGURATION (FIXED) ---
+
+  # 1. Firmware: Essential for Intel Lunar Lake audio
+  hardware.enableAllFirmware = true;
+  hardware.firmware = [ pkgs.sof-firmware ];
+
+  # 2. Disable Legacy PulseAudio (CRITICAL: conflicts with Pipewire)
   hardware.pulseaudio.enable = false;
+
+  # 3. Enable PipeWire
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
+    pulse.enable = true; # PipeWire replaces PulseAudio here
     jack.enable = true;
   };
-  # Enable networking
+
+  # --- END AUDIO CONFIGURATION ---
+
+  # Networking
   networking.networkmanager.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  # Input
   services.xserver.libinput.enable = true;
 
   # Theme

@@ -15,6 +15,9 @@
   # Programs
   environment.systemPackages = with pkgs; [
     #apps
+    kicad
+    google-chrome
+    unrar
     jdk
     obsidian # flexible file and text manager
     notion-app-enhanced
@@ -69,7 +72,6 @@
   # Battery optimization
   powerManagement.powertop.enable = true;
   services.thermald.enable = true;
-  services.tlp.enable = false;
 
   programs.firefox.enable = true;
 }
