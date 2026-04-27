@@ -8,7 +8,7 @@
 
 {
   imports = [
-    ./app-config.nix
+    ./programs
   ];
 
   # Programs

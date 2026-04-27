@@ -39,27 +39,6 @@
   # Printing
   services.printing.enable = true;
 
-  # --- AUDIO CONFIGURATION (FIXED) ---
-
-  # 1. Firmware: Essential for Intel Lunar Lake audio
-  hardware.enableAllFirmware = true;
-  hardware.firmware = [ pkgs.sof-firmware ];
-
-  # 2. Disable Legacy PulseAudio (CRITICAL: conflicts with Pipewire)
-  services.pulseaudio.enable = false;
-
-  # 3. Enable PipeWire
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true; # PipeWire replaces PulseAudio here
-    jack.enable = true;
-  };
-
-  # --- END AUDIO CONFIGURATION ---
-
   # Networking
   networking.networkmanager.enable = true;
 
