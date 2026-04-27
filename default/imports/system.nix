@@ -49,5 +49,5 @@
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.05"; # Latest stable
 }
