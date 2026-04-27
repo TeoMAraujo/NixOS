@@ -35,6 +35,7 @@ in
   imports = [
     ./imports/hardware-configuration.nix
     ./imports/app-config.nix
+    ./imports/power-management.nix
     ./imports/regionalization.nix
     ./imports/system.nix
     ./imports/apps.nix

@@ -1,7 +1,0 @@
-{ ... }:
-{
-  imports = [
-    ./plugins
-    ./options.nix
-  ];
-}

@@ -8,7 +8,6 @@
 
 {
   imports = [
-    # include the results of the hardware scan.
     ./app-config.nix
   ];
 
@@ -68,10 +67,6 @@
     kdePackages.ark # archive manager
     gnumake
   ];
-
-  # Battery optimization
-  powerManagement.powertop.enable = true;
-  services.thermald.enable = true;
 
   programs.firefox.enable = true;
 }

@@ -1,3 +1,0 @@
-{
-  colorschemes = import ./catppuccin;
-}
