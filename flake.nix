@@ -42,7 +42,7 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./default/home.nix
-          catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeModules.catppuccin
         ];
       };
     };
