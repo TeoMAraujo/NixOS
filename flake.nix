@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin.url = "github:catppuccin/nix";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixvim = {
@@ -15,6 +19,7 @@
     {
       self,
       nixpkgs,
+      home-manager,
       catppuccin,
       nixvim,
       ...
@@ -30,6 +35,14 @@
         modules = [
           ./default/configuration.nix
           catppuccin.nixosModules.catppuccin
+        ];
+      };
+      homeConfigurations.paula = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./default/home.nix
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };

@@ -7,6 +7,10 @@
 }:
 
 {
+  imports = [
+    ./imports/programs
+  ];
+
   home.username = "paula";
   home.homeDirectory = "/home/paula";
 
