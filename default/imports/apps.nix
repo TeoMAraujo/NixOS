@@ -7,10 +7,6 @@
 }:
 
 {
-  imports = [
-    ./programs
-  ];
-
   # Programs
   environment.systemPackages = with pkgs; [
     #apps
