@@ -7,19 +7,14 @@ pkgs,
 # username,
 inputs,
 ...
-}: 
-#let
- #   inherit (config.programs.nvf) maxConfig;
- #   light-theme = "base16-ia-light";
-  #  dark-theme = "tokyonight-moon";
-#in 
+}:
+let
+    inherit (config.programs.nvf) maxConfig;
+in 
 {
-
-    /*
-imports = [
-inputs.nvf.nixosModules.default
-];
-*/
+    imports = [
+        inputs.nvf.homeManagerModules.default
+    ];
 
     config = {
         programs.nvf = {
@@ -261,9 +256,9 @@ inputs.nvf.nixosModules.default
                 };
 
                 imports = [
-                    ./keymaps.nix
-                    ./languages.nix
-                ]
+                    ./NVF/keymaps.nix
+                    ./NVF/languages.nix
+                ];
             
                 #session = {
                  #   nvim-session-manager = {

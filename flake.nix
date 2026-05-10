@@ -45,6 +45,7 @@
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
+          nvf.homeManagerModules.default
           ./default/home.nix
           ./nvf.nix
           catppuccin.homeModules.catppuccin

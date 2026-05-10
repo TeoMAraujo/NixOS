@@ -35,8 +35,9 @@
     # programming tools
         kitty # terminal emulator
         vscode
-        quartus-prime-lite    
-        inputs.nixvim.packages.${pkgs.system}.default # NixVim
+        quartus-prime-lite
+        neovim # nvim editor
+        # inputs.nixvim.packages.${pkgs.system}.default # NixVim
         tmux
         libgccjit
         libgcc
@@ -63,5 +64,5 @@
         
   ];
 
-  programs.refox.enable = true;
+  programs.firefox.enable = true;
 }
