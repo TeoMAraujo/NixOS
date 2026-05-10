@@ -15,6 +15,7 @@ in
     imports = [
         ./NVF/keymaps.nix
         ./NVF/languages.nix
+        ./NVF/theme.nix
     ];
 
     config = {
@@ -41,35 +42,6 @@ in
                     autoindent = true;
                     smartindent = true;
                     termguicolors = true;
-                };
-
-                # Theme and Appearance
-                theme = {
-                    enable = true;
-                    name = "catppuccin";
-                    style = "mocha";
-                    transparent = true;
-                };
-
-                startPlugins = [
-                    "catppuccin"
-                ];
-
-                visuals = {
-                    nvim-scrollbar.enable = false;
-                    nvim-web-devicons.enable = true;
-                    nvim-cursorline.enable = true;
-                    cinnamon-nvim.enable = true;
-                    fidget-nvim.enable = maxConfig;
-                    highlight-undo.enable = true;
-                    indent-blankline.enable = true;
-                };
-
-                statusline = {
-                    lualine = {
-                        enable = true;
-                        theme = "catppuccin";
-                    };
                 };
 
                 # LSP and Code Intelligence
@@ -128,48 +100,6 @@ in
                             restriction_mode = "hint_and_block";
                         };
                     };
-                };
-
-                # UI Enhancements
-                ui = {
-                    borders.enable = false;
-                    noice.enable = maxConfig;
-                    colorizer.enable = true;
-                    modes-nvim.enable = false;
-                    illuminate.enable = true;
-                    breadcrumbs = {
-                        enable = maxConfig;
-                        navbuddy.enable = maxConfig;
-                    };
-                    smartcolumn = {
-                        enable = false;
-                        setupOpts.custom_colorcolumn = {
-                            nix = "110";
-                            ruby = "120";
-                            java = "130";
-                            go = [
-                                "90"
-                                "130"
-                            ];
-                        };
-                    };
-                    fastaction.enable = true;
-                };
-
-                # Views and Utilities
-                dashboard = {
-                    dashboard-nvim.enable = false;
-                    alpha.enable = maxConfig;
-                };
-
-                minimap = {
-                    minimap-vim.enable = false;
-                    codewindow.enable = maxConfig;
-                };
-
-                # Notifications and Feedback
-                notify = {
-                    nvim-notify.enable = maxConfig;
                 };
 
                 presence = {
