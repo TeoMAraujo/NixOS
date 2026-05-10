@@ -5,6 +5,5 @@
     ./bash.nix
     ./starship.nix
     ./kitty.nix
-    ./nixvim
   ];
 }

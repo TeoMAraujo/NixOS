@@ -1,6 +1,10 @@
-{...} :
+{ config, lib, ... }:
+let
+    inherit (config.programs.nvf) maxConfig;
+in
+{
 
-languages = {
+config.programs.nvf.settings.vim.languages = {
     enableFormat = false;
     enableTreesitter = true;
     enableExtraDiagnostics = true;
@@ -41,7 +45,6 @@ languages = {
     html.enable = maxConfig;
     sql.enable = true;
     kotlin.enable = false;
-    ts.enable = false;
     go.enable = true;
     zig.enable = false;
     typst.enable = false;
@@ -65,6 +68,6 @@ languages = {
     ruby.enable = false;
     fsharp.enable = false;
 
-    tailwind.enable = false;
-    svelte.enable = false;
 };
+
+}

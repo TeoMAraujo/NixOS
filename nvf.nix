@@ -13,7 +13,8 @@ let
 in 
 {
     imports = [
-        inputs.nvf.homeManagerModules.default
+        ./NVF/keymaps.nix
+        ./NVF/languages.nix
     ];
 
     config = {
@@ -82,6 +83,9 @@ in
                     lspSignature.enable = maxConfig;
                     otter-nvim.enable = true;
                     nvim-docs-view.enable = false;
+                    presets = {
+                        tailwindcss-language-server.enable = false;
+                    };
                 };
 
                 diagnostics.config = {
@@ -254,32 +258,6 @@ in
                 gestures = {
                     gesture-nvim.enable = false;
                 };
-
-                imports = [
-                    ./NVF/keymaps.nix
-                    ./NVF/languages.nix
-                ];
-            
-                #session = {
-                 #   nvim-session-manager = {
-                  #      enable = maxConfig;
-                   #     setupOpts = {
-                    #        autoload_mode = "CurrentDir";
-                     #       autosave_ignore_dirs = [
-                      #          "/home/antonio/"
-                       #         "/home/antonio/Downloads"
-                        #        "/home/antonio/tmp"
-                         #   ];
-                        #};
-                    #};
-                #};
-            
-                #debugger = {
-                 #   nvim-dap = {
-                  #      enable = false;
-                   #     ui.enable = true;
-                  #  };
-                #};
 
             };
             
