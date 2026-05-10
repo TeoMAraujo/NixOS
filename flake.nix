@@ -39,15 +39,15 @@
         modules = [
           ./default/configuration.nix
           catppuccin.nixosModules.catppuccin
+          nvf.nixosModules.default
+          ./nvf.nix
         ];
       };
       homeConfigurations.paula = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          nvf.homeManagerModules.default
           ./default/home.nix
-          ./nvf.nix
           catppuccin.homeModules.catppuccin
         ];
       };

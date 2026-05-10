@@ -36,7 +36,7 @@
         kitty # terminal emulator
         vscode
         quartus-prime-lite
-        neovim # nvim editor
+        # neovim # nvim editor
         # inputs.nixvim.packages.${pkgs.system}.default # NixVim
         tmux
         libgccjit
