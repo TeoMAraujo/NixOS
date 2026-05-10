@@ -55,6 +55,8 @@
     keybindings = {
       "ctrl+h" = "kitten neighboring_window left";
       "ctrl+l" = "kitten neighboring_window right";
+      #colocar keybinding de ctrl + a, e de crtl + backscape 
+      #integrar github p/ pder apertar tab com os repos
     };
   };
 }

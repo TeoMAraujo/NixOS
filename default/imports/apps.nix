@@ -10,59 +10,58 @@
   # Programs
   environment.systemPackages = with pkgs; [
     #apps
-    kicad
-    google-chrome
-    unrar
-    jdk
-    obsidian # flexible file and text manager
-    notion-app-enhanced
-    github-desktop
-    krita # image editor
-    davinci-resolve # video editor
-    nomacs # image viewer
-    amarok # music player
-    vlc # video player
-    kdePackages.dolphin # file manager
-    anki
+        kicad
+        obsidian # flexible file and text manager
+        notion-app-enhanced
+        github-desktop
+        krita # image editor
+        davinci-resolve # video editor
+        nomacs # image viewer
+        amarok # music player
+        vlc # video player
+        kdePackages.dolphin # file managerer
+        anki
     #social
-    whatsapp-for-linux # zap com eletron kk
-    discord
-    spotify # music
+        whatsapp-for-linux # zap com eletron kk
+        discord
+        spotify # music
+        spicetify-cli # spotify cli
+    
     #tools
-    kdePackages.kwallet
-    gparted # disk manager
-    #ventoy-full # bootable iso's
+        kdePackages.kwallet
+        gparted # disk manager
+        #ventoy-full # bootable iso's
 
     # programming tools
-    vscode
-    #kicad-unstable
-    quartus-prime-lite
-    R
-    # rstudio
-    logisim # logic gate sim
-    #        onshape
-    valgrind # memory leaks app
-    inputs.nixvim.packages.${pkgs.system}.default # NixVim
-    tmux
-    libgccjit
-    libgcc
-    starship # prompt for shell
-    neofetch
-    kitty # terminal emulator
-    bash
-    doxygen
-    doxygen_gui
+        kitty # terminal emulator
+        vscode
+        quartus-prime-lite    
+        inputs.nixvim.packages.${pkgs.system}.default # NixVim
+        tmux
+        libgccjit
+        libgcc
+        starship # prompt for shell
+        neofetch
+        bash
+        doxygen
+        doxygen_gui
+        
+    # logisim # logic gate sim # onshape # valgrind # memory leaks app
+    
+    
     # services
-    git
-    zip
-    unzip
-    spicetify-cli # spotify cli
-    home-manager
-    catppuccin-whiskers
-    justbuild
-    kdePackages.ark # archive manager
-    gnumake
+        git
+        zip
+        unzip
+        unrar
+        home-manager
+        catppuccin-whiskers
+        justbuild
+        kdePackages.ark # archive manager
+        gnumake
+        jdk
+        
   ];
 
-  programs.firefox.enable = true;
+  programs.refox.enable = true;
 }

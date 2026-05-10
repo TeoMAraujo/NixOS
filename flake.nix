@@ -7,12 +7,15 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin.url = "github:catppuccin/nix";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    nixvim = {
-      url = "github:TeoMAraujo/NixVim";
+    #   nixvim = {
+      #url = "github:TeoMAraujo/NixVim";
       #url = "github:nix-community/nixvim";
       #inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
@@ -21,7 +24,8 @@
       nixpkgs,
       home-manager,
       catppuccin,
-      nixvim,
+       # nixvim,
+      nvf,
       ...
     }@inputs:
     # use "nixos", or your hostname as the name of the configuration
@@ -42,6 +46,7 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./default/home.nix
+          ./nvf.nix
           catppuccin.homeModules.catppuccin
         ];
       };
