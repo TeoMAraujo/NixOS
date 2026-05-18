@@ -4,14 +4,19 @@
 config.programs.nvf.settings.vim.keymaps = [
     # telescope colorscheme
     # { key = "<leader>fc"; action = ":Telescope colorscheme<cr>"; mode = ["n" "x"]; silent = true; desc = "Colorscheme [Telescope]"; }
-    { key = "<C-p>"; action = ":Telescope find_files<cr>"; mode = ["n"]; silent = true; desc = "Colorscheme [Telescope]"; }
+    { key = "<C-p>"; action = ":Telescope find_files<cr>"; mode = ["n"]; silent = true; desc = "Colorscheme [Telescope]"; } ## muda pra limitar ao escopo dos arquivos dentro da pasta, e entender keybainds tp tab
     #adicionar setas p/ porra nenhuma
-    #adicionaro telescope CRTL SHIFT P
-    
+    #adicionaro telescope CRTL SHIFT P 
+    #buffer de copia
+    #crlt shift U
+    #control shift c p/ copiar p/ clipboard
+    # shift tab pra voltar tudo
     # adcicionar crlt a { key = "<C-a>"; action = "gg<S-v>G"; mode = ["n"]; silent = true; desc = "Select All"; }
     # adicionar tab pra mexer
     # entender as keymaps e os combos do vim mermo
     # crtl F 
+    # VISUAL X VISUAL LINE VIM INNVERTER
+#PELO AMOR DE DEUS IDENTA AUTOMATICO
     { key = "<C-e>"; action = ":Neotree toggle right<CR>"; mode = ["n"]; silent = false; }
     { key = "<C-gs>"; action = ":Gitsigns toggle_signs<CR>"; mode = ["n"]; silent = false; }
 

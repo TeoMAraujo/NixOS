@@ -35,13 +35,16 @@ in
         statusline = {
             lualine = {
                 enable = true;
-                theme = "catppuccin";
+                theme = "auto";
             };
         };
 
         ui = {
             borders.enable = false;
-            noice.enable = maxConfig;
+            noice = {
+                enable = maxConfig;
+                setupOpts.presets.lsp_doc_border = true;
+            };
             colorizer.enable = true;
             modes-nvim.enable = false;
             illuminate.enable = true;
@@ -78,6 +81,13 @@ in
         # Notifications and Feedback
         notify = {
             nvim-notify.enable = maxConfig;
+        };
+
+        telescope = {
+            enable = true;
+            setupOpts = {
+                pickers.colorscheme.enable_preview = true;
+            };
         };
     };
 }

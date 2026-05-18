@@ -31,7 +31,7 @@
         kdePackages.kwallet
         gparted # disk manager
         #ventoy-full # bootable iso's
-
+        claude-code
     # programming tools
         kitty # terminal emulator
         vscode

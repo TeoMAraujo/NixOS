@@ -36,12 +36,20 @@ in
 
                 # Editor Options
                 options = {
+                    autoindent = true;
+                    cmdheight = 1;
                     cursorlineopt = "line";
                     shiftwidth = 4;
                     scrolloff = 4;
-                    autoindent = true;
                     smartindent = true;
                     termguicolors = true;
+                    signcolumn = "no";
+                    splitbelow = false;
+                    splitright = false;
+                    tabstop = 8;
+                    timeoutlen = 500;
+                    updatetime = 300;
+                    wrap = false;
                 };
 
                 # LSP and Code Intelligence
@@ -86,10 +94,6 @@ in
                 tabline = {
                     nvimBufferline.enable = false;
                 };
-
-                telescope.enable = true;
-                telescope.setupOpts.pickers.colorscheme.enable_preview = true;
-
                 binds = {
                     whichKey.enable = false;
                     cheatsheet.enable = false;
