@@ -1,18 +1,17 @@
 {
   description = "floquito";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  # flake-parts.url = "github:hercules-ci/flake-parts";
 
-  inputs =
-    let
-      follow = {
-        inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
-      };
-    in
-    {
-      nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    # flake-parts.url = "github:hercules-ci/flake-parts";
-      nvf = (follow // { url = "github:notashelf/nvf"; });
-      catppuccin = (follow // { url = "github:catppuccin/nix"; });
-#     stylix = (follow // { url = "github:nix-community/stylix"; }); # https://www.youtube.com/watch?v=ljHkWgBaQWU
+    nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
+
+    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
+
+#     stylix.url = "github:nix-community/stylix"; # https://www.youtube.com/watch?v=ljHkWgBaQWU
+#     stylix.inputs.nixpkgs.follows = "nixpkgs";
 #  nix-flatpak = (follow // {url = "github:gmodena/nix-flatpak/?ref=latest"});
     #   nixos-hardware = {
 #   url = "github:NixOS/nixos-hardware/master";
@@ -29,12 +28,12 @@
 #     utils = {
 #       url = "github:numtide/flake-utils";
 #     };
-    };
+  };
 # https://github.com/Misterio77/nix-colors
   outputs =
     { self, nixpkgs, catppuccin, nvf, ... }@inputs:
     {
-      nixosConfigurations.paula = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # puxa os inputs para ser acessado por outros arquivos
         modules = [

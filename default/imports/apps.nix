@@ -24,7 +24,7 @@
     gparted            # gerenciador de disco
     qalc               # calculadora CLI (verificar nome do pacote)
     brightnessctl
-    services.blueman.enable = true;
+#services.blueman.enable = true
     # Programação
     libgccjit
     libgcc
