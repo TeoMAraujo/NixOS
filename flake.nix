@@ -40,7 +40,7 @@
           ./default/configuration.nix
             #inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
-          # nvf.nixosModules.default
+           nvf.nixosModules.default
           ./nvf.nix
           # nix-flatpak.nixosModules.nix-flatpak
         ];

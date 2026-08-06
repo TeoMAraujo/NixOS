@@ -22,13 +22,13 @@
     # Ferramentas do sistema
     ventoy-full        # criar ISOs bootáveis
     gparted            # gerenciador de disco
-    qalc               # calculadora CLI (verificar nome do pacote)
+    libqalculate               # calculadora CLI (verificar nome do pacote)
     brightnessctl
 #services.blueman.enable = true
     # Programação
     libgccjit
     libgcc
-    make
+#    make
     fastfetch
     bash
 
