@@ -1,54 +1,49 @@
 {
-  description = "Config do 'Teu Pai'";
+  description = "floquito";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    #   nixvim = {
-      #url = "github:TeoMAraujo/NixVim";
-      #url = "github:nix-community/nixvim";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    catppuccin.url = "github:catppuccin/nix";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      catppuccin,
-       # nixvim,
-      nvf,
-      ...
-    }@inputs:
-    # use "nixos", or your hostname as the name of the configuration
+  inputs =
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      follow = {
+        inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
+      };
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+      nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # flake-parts.url = "github:hercules-ci/flake-parts";
+      nvf = (follow // { url = "github:notashelf/nvf"; });
+      catppuccin = (follow // { url = "github:catppuccin/nix"; });
+#     stylix = (follow // { url = "github:nix-community/stylix"; }); # https://www.youtube.com/watch?v=ljHkWgBaQWU
+#  nix-flatpak = (follow // {url = "github:gmodena/nix-flatpak/?ref=latest"});
+    #   nixos-hardware = {
+#   url = "github:NixOS/nixos-hardware/master";
+#     };
+#     nixpkgs = {
+#       url = "github:nixos/nixpkgs/nixos-25.11";
+#     };
+#     nixpkgs-master = {
+#       url = "github:nixos/nixpkgs/master";
+#     };
+#     nixpkgs-unstable = {
+#       url = "github:nixos/nixpkgs/nixos-unstable";
+#     };
+#     utils = {
+#       url = "github:numtide/flake-utils";
+#     };
+    };
+# https://github.com/Misterio77/nix-colors
+  outputs =
+    { self, nixpkgs, catppuccin, nvf, ... }@inputs:
+    {
+      nixosConfigurations.paula = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; }; # puxa os inputs para ser acessado por outros arquivos
         modules = [
           ./default/configuration.nix
+            #inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
-          nvf.nixosModules.default
+          # nvf.nixosModules.default
           ./nvf.nix
-        ];
-      };
-      homeConfigurations.paula = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./default/home.nix
-          catppuccin.homeModules.catppuccin
+          # nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };

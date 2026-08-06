@@ -59,7 +59,6 @@
 
   # ASUS Daemon para controlar ventiladores e RGB (otimizado para Vivobook)
   services.asusd.enable = true;
-  services.asusd.enableUserService = true;
 
   # Habilitar cpufreq para melhor controle
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
