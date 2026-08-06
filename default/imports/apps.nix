@@ -20,7 +20,7 @@
     spotify
 
     # Ferramentas do sistema
-    ventoy-full        # criar ISOs bootáveis
+    ventoy        # criar ISOs bootáveis
     gparted            # gerenciador de disco
     libqalculate               # calculadora CLI (verificar nome do pacote)
     brightnessctl
