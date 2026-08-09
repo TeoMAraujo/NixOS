@@ -7,6 +7,12 @@
 }:
 
 {
+    imports = [
+        ./Zenbook-S14.nix
+    ];
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
   networking.hostName = "nixos";
   # User config
   users.users.paula = {
@@ -27,6 +33,8 @@
 # criar o hardware e olhar os flakes
 # https://linux-hardware.org/?view=howto -> precisa de flatpak ou docker
 #como funfam os gerenciadores de pacotes distintos
+
+
 
 # Audio
   security.rtkit.enable = true;

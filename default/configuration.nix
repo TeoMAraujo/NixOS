@@ -8,6 +8,5 @@
       ./imports/boot.nix
       ./imports/system.nix
     ];
-nixpkgs.config.allowUnfree = true;
 
 }

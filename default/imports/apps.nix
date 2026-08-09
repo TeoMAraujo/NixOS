@@ -6,7 +6,13 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
+nixpkgs.config = {
+  allowUnfree = true;
+  permittedInsecurePackages = [ "ventoy-1.1.12" ];
+};
+    programs.firefox.enable = true;
+    environment.systemPackages = with pkgs; [
+    asusctl
     # Apps gráficos
     kicad              # PCB design
     krita              # editor de imagem
@@ -14,6 +20,7 @@
     nomacs             # visualizador de imagem
     vlc                # player de vídeo
     anki
+    kitty
 
 # flatpackear:
     obsidian
@@ -50,7 +57,7 @@
 
     # Git
     git
-
+    github-desktop
     # testa pra ver se fazem sentido de terem no pc
     # neovim
     # inputs.nixvim.packages.${pkgs.system}.default

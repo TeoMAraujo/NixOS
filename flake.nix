@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   # flake-parts.url = "github:hercules-ci/flake-parts";
-
+  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
 
