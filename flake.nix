@@ -2,15 +2,24 @@
   description = "floquito";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-  # flake-parts.url = "github:hercules-ci/flake-parts";
-  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nvf.url = "github:notashelf/nvf";
-    nvf.inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
-
-    catppuccin.url = "github:catppuccin/nix";
-    catppuccin.inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
-
-#     stylix.url = "github:nix-community/stylix"; # https://www.youtube.com/watch?v=ljHkWgBaQWU
+    
+    # flake-parts.url = "github:hercules-ci/flake-parts";
+    
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";  
+    };    
+    nvf = {
+        url = "github:notashelf/nvf";
+        inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
+    };
+    catppuccin = {
+        url = "github:catppuccin/nix";
+        inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
+    };
+#     wstylix.url = "github:nix-community/stylix"; # https://www.youtube.com/watch?v=ljHkWgBaQWU
 #     stylix.inputs.nixpkgs.follows = "nixpkgs";
 #  nix-flatpak = (follow // {url = "github:gmodena/nix-flatpak/?ref=latest"});
     #   nixos-hardware = {
@@ -31,13 +40,14 @@
   };
 # https://github.com/Misterio77/nix-colors
   outputs =
-    { self, nixpkgs, catppuccin, nvf, ... }@inputs:
+    { self, nixpkgs, home-manager, catppuccin, nvf, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # puxa os inputs para ser acessado por outros arquivos
         modules = [
           ./default/configuration.nix
+        home-manager.nixosModules.home-manager
             #inputs.stylix.nixosModules.stylix
           catppuccin.nixosModules.catppuccin
            nvf.nixosModules.default

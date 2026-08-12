@@ -20,7 +20,6 @@ nixpkgs.config = {
     nomacs             # visualizador de imagem
     vlc                # player de vídeo
     anki
-    kitty
 
 # flatpackear:
     obsidian
