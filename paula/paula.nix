@@ -1,9 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
   imports = [
-    ./imports/programs/kitty.nix
-    ./imports/programs/bash.nix
-    ./imports/programs/starship.nix
+    ./programs/kitty.nix
+    ./programs/bash.nix
+    ./programs/starship.nix
   ];
 
   home.packages = with pkgs; [
