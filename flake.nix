@@ -46,12 +46,13 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # puxa os inputs para ser acessado por outros arquivos
         modules = [
-          ./default/configuration.nix
-        home-manager.nixosModules.home-manager
+            ./default/configuration.nix
+            ./home.nix
+            home-manager.nixosModules.home-manager
             #inputs.stylix.nixosModules.stylix
-          catppuccin.nixosModules.catppuccin
-           nvf.nixosModules.default
-          ./nvf.nix
+            catppuccin.nixosModules.catppuccin
+            ./nvf.nix
+            nvf.nixosModules.default
           # nix-flatpak.nixosModules.nix-flatpak
         ];
       };

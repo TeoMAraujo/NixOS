@@ -15,6 +15,7 @@ nixpkgs.config = {
     asusctl
     # Apps gráficos
     kicad              # PCB design
+    ltspice            # SPICE
     krita              # editor de imagem
     davinci-resolve    # editor de vídeo
     nomacs             # visualizador de imagem
