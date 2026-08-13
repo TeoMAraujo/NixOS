@@ -7,7 +7,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "${pkgs.kitty-themes}/share/kitty-themes/themes/Catppuccin-Mocha.conf";
+    themeFile = "Catppuccin-Mocha";
     settings = {
       font_size = 10;
       background_opacity = 0.8;

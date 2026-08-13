@@ -37,7 +37,6 @@ nixpkgs.config = {
     libgcc
 #    make
     fastfetch
-    bash
 
     # Aparência
     catppuccin-whiskers

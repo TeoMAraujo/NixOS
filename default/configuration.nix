@@ -7,6 +7,7 @@
       ./imports/apps.nix
       ./imports/boot.nix
       ./imports/system.nix
+      ./imports/fonts.nix
     ];
 
 }

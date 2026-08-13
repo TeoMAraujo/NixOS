@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  programs.bash.enable = true;
   programs.bash.shellAliases = {
     rSnos = "sudo nixos-rebuild switch --flake ~/github/NixOS/";
     rShm = "sudo home-manager switch --flake ~/NixOS/home-manager/";
