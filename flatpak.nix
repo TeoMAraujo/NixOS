@@ -4,6 +4,7 @@
         enable = true;
         
         update.onActivation = true;
+        uninstallUnmanaged = true;
 
         remotes = lib.mkOptionDefault [
             {
@@ -19,13 +20,5 @@
         ];
 
         overrides.global.Environment.TZ = ":/run/host/monitor/localtime";
-        overrides.writeMode = "merge";
-        
-        uninstallUnmanaged = true;
-    };
-
-    programs.appimage = {
-        enable = true;
-        binfmt = true;
     };
 }
