@@ -54,13 +54,13 @@
             ./default/configuration.nix
             ./home.nix
             home-manager.nixosModules.home-manager
-            spicetify-nix.homeManagerModules.spicetify        
             #inputs.stylix.nixosModules.stylix
             catppuccin.nixosModules.catppuccin
             ./nvf.nix
             nvf.nixosModules.default
             spicetify-nix.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
+            spicetify-nix.nixosModules.default
         ];
       };
     };
