@@ -73,10 +73,6 @@ in
             alpha.enable = maxConfig;
         };
 
-        minimap = {
-            minimap-vim.enable = false;
-            codewindow.enable = maxConfig;
-        };
 
         # Notifications and Feedback
         notify = {

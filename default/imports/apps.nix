@@ -8,7 +8,7 @@
 {
 nixpkgs.config = {
   allowUnfree = true;
-  permittedInsecurePackages = [ "ventoy-1.1.12" ];
+  permittedInsecurePackages = [ "ventoy-1.1.17" ];
 };
     programs.firefox.enable = true;
     environment.systemPackages = with pkgs; [
@@ -23,11 +23,8 @@ nixpkgs.config = {
     anki
 
 # flatpackear:
-    obsidian
-    spotify
 
     # Ferramentas do sistema
-    ventoy        # criar ISOs bootáveis
     gparted            # gerenciador de disco
     libqalculate               # calculadora CLI (verificar nome do pacote)
     brightnessctl
@@ -99,7 +96,7 @@ nixpkgs.config = {
     # pavucontrol
     # distrobox
     # CLI — manipulação de texto/dados
-    # fzf
+    fzf
     # vim
     # tldr
     # wezterm

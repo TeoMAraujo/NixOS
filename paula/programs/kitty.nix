@@ -37,7 +37,7 @@
       
       # Performance e visual:
       # animation_duration = 0.25;  # Velocidade de animações
-      # confirm_os_window_close = 0;  # 0 = sem confirmação ao fechar
+      confirm_os_window_close = 0;  # 0 = sem confirmação ao fechar
       # enable_audio_bell = false;  # Desabilita sino de áudio
       # visual_bell_duration = 0.0;  # Duração do flash visual
       
