@@ -1,4 +1,4 @@
-{ lib, self, ... }:
+{ lib, ... }:
 {
     services.flatpak = {
         enable = true;
@@ -13,10 +13,11 @@
             }
         ];
 
+        # Use strings em vez de blocos { appId = ... }
         packages = [
-            { appId = "net.waterfox.waterfox"; origin = "flathub"; }
-            { appId = "com.stremio.Stremio"; origin = "flathub"; }
-            { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
+            "net.waterfox.waterfox"
+            "com.stremio.Stremio"
+            "md.obsidian.Obsidian" #discord
         ];
 
         overrides.global.Environment.TZ = ":/run/host/monitor/localtime";
