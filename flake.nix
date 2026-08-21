@@ -20,7 +20,10 @@
         inputs.nixpkgs.follows = "nixpkgs"; # undouble versions
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #     wstylix.url = "github:nix-community/stylix"; # https://www.youtube.com/watch?v=ljHkWgBaQWU
 #     stylix.inputs.nixpkgs.follows = "nixpkgs";
 #  nix-flatpak = (follow // {url = "github:gmodena/nix-flatpak/?ref=latest"});
@@ -42,7 +45,7 @@
   };
 # https://github.com/Misterio77/nix-colors
   outputs =
-    { self, nixpkgs, home-manager, catppuccin, nvf, nix-flatpak, ... }@inputs:
+    { self, nixpkgs, home-manager, catppuccin, nvf, nix-flatpak, spicetify-nix, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -51,10 +54,12 @@
             ./default/configuration.nix
             ./home.nix
             home-manager.nixosModules.home-manager
+            spicetify-nix.homeManagerModules.spicetify        
             #inputs.stylix.nixosModules.stylix
             catppuccin.nixosModules.catppuccin
             ./nvf.nix
             nvf.nixosModules.default
+            spicetify-nix.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
         ];
       };
