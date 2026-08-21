@@ -58,9 +58,10 @@
             catppuccin.nixosModules.catppuccin
             ./nvf.nix
             nvf.nixosModules.default
-            spicetify-nix.nixosModules.default
             nix-flatpak.nixosModules.nix-flatpak
-            spicetify-nix.nixosModules.default
+            ./flatpak.nix
+            spicetify-nix.nixosModules.spicetify
+            ./spicetify.nix 
         ];
       };
     };

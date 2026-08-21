@@ -4,7 +4,6 @@
     ./programs/kitty.nix
     ./programs/bash.nix
     ./programs/starship.nix
-    ./programs/spicetify-nix 
   ];
 
   home.packages = with pkgs; [
